@@ -73,5 +73,6 @@ if __name__ == "__main__":
     for file in os.listdir(SOURCE_DATA_PATH):
         if INPUT_FORMAT in file:
             parse_data(os.path.join(SOURCE_DATA_PATH,file))
+    input("请按任意键退出......")
     pass
 
