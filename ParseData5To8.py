@@ -80,6 +80,7 @@ def parse_data(input_file_path):
         scenic_sheet.write(i, 0, scenic_records[i], style)
     work_book.save(output_file_path)
     print("output_file_path:{} save successful!!!".format(output_file_path))
+    return output_file_path
 
 
 if __name__ == "__main__":
