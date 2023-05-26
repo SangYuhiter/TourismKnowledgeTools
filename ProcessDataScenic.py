@@ -112,6 +112,7 @@ def process_scenic_data(input_file_path):
 
     write_workbook.save(output_file_path)
     print("output_file_path:{} save successful!!!".format(output_file_path))
+    return output_file_path
 
 if __name__ == "__main__":
     # demo path
