@@ -11,22 +11,7 @@
 import os
 import xlwt
 
-# SOURCE_DATA_PATH = "./source_data"
-SOURCE_DATA_PATH = "."
-INPUT_FORMAT = ".csv"
-OUTPUT_FORMAT = "_process.xlsx"
-INPUT_ENCODING = "gbk"
-OUTPUT_ENCODING = "utf-8"
-
-SCENIC_KEY_WORD = "scenic"
-TRAVELDETAIL_KEY_WORD = "traveldetail"
-
-SCENIC_SHEET_NAME = "scenic"
-TRAVELDETAIL_SHEET_NAME = "td"
-
-SHEET_FONT_NAME = "宋体"
-SHEET_FONT_SIZE = 20 * 11
-SHEET_LINE_HEIGHT = (int)(20 * 14.4)
+from BasicInfo import *
 
 
 def parse_data(input_file_path):
@@ -61,7 +46,7 @@ def parse_data(input_file_path):
                                                                                         len(travel_detail_records)))
 
     # write info to xlsx
-    output_file_path = input_file_path.replace(INPUT_FORMAT, OUTPUT_FORMAT)
+    output_file_path = input_file_path.replace(INPUT_CSV_FORMAT, OUTPUT_FORMAT)
     print("output_file_path:{}".format(output_file_path))
     work_book = xlwt.Workbook(encoding=OUTPUT_ENCODING)
     travel_detail_sheet = work_book.add_sheet(TRAVELDETAIL_SHEET_NAME)

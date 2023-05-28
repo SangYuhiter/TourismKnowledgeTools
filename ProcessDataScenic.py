@@ -9,18 +9,11 @@
 """
 
 import os
-
 import xlrd
 import xlwt
 
-SOURCE_DATA_PATH = "source_data"
-INPUT_FORMAT = ".xlsx"
-OUTPUT_FORMAT = "_process.xlsx"
-OUTPUT_ENCODING = "utf-8"
+from BasicInfo import *
 
-SHEET_FONT_NAME = "宋体"
-SHEET_FONT_SIZE = 20 * 11
-SHEET_LINE_HEIGHT = (int)(20 * 14.4)
 
 def replace_element_name(head_name_list, old_str, new_str):
     for i in range(len(head_name_list)):
@@ -75,7 +68,7 @@ def process_scenic_data(input_file_path):
     print(head_row_values)
 
     # write info to xlsx
-    output_file_path = input_file_path.replace(INPUT_FORMAT, OUTPUT_FORMAT)
+    output_file_path = input_file_path.replace(INPUT_XLSX_FORMAT, OUTPUT_FORMAT)
     print("output_file_path:{}".format(output_file_path))
     write_workbook = xlwt.Workbook(encoding=OUTPUT_ENCODING)
     write_sheet0 = write_workbook.add_sheet(sheet0_name)
